@@ -1,16 +1,19 @@
 import './NavBar.css';
 import logo from './clirpg-logo.png'
+import CartWidget from '../CartWidget/CartWidget';
+
 function NavBar() {
     return (
         <>
             <nav className="NavBar">
-                <img src={logo} />
+                <img src={logo} alt="Logo" />
                 <ul>
-                    <a href="#"><li>Inicio</li></a>
-                    <a href="#"><li>Productos</li></a>
-                    <a href="#"><li>Categorias</li></a>
+                    <a href="./index.html"><li>Inicio</li></a>
+                    <a href="./index.html"><li>Productos</li></a>
+                    <a href="./index.html"><li>Categorias</li></a>
                 </ul>
-                <a href="#"><p>Log In</p></a>
+                <a href="./index.html"><p>Log In</p></a>
+                <CartWidget/>
             </nav>
         </>
     );
