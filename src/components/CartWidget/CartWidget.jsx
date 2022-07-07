@@ -4,7 +4,7 @@ let styles =
         width: "1.75em",
         height: "1.75em",
         margin: 0,
-        "margin-right": "1em"
+        marginRight: "1em"
     },
     itemsCarrito: {
         margin: 0,
@@ -13,9 +13,9 @@ let styles =
     },
     cart: {
         display: "flex",
-        "flex-flow": "row",
-        "justify-content": "center",
-        "align-items": "center",
+        flexFlow: "row",
+        justifyContent: "center",
+        alignItems: "center",
     }
 }
 
@@ -24,7 +24,7 @@ let itemsCarrito = 0;
 const CartWidget = () => {
     return (
         <div style={styles.cart}>
-            <svg style={styles.svg} class="icon icon-tabler icon-tabler-shopping-cart" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg style={styles.svg} className="icon icon-tabler icon-tabler-shopping-cart" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <circle cx="6" cy="19" r="2" />
                 <circle cx="17" cy="19" r="2" />
