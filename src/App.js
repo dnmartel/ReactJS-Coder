@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
+      <NavBar itemsCarrito={1}/>
       <main className="App-header">
         <ItemListContainer greeting="Bienvenidos al ecommerce" />
       </main>

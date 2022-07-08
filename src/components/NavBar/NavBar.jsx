@@ -2,7 +2,7 @@ import './NavBar.css';
 import logo from './clirpg-logo.png'
 import CartWidget from '../CartWidget/CartWidget';
 
-function NavBar() {
+function NavBar({itemsCarrito}) {
     return (
         <>
             <nav className="NavBar">
@@ -13,7 +13,7 @@ function NavBar() {
                     <a href="./index.html"><li>Categorias</li></a>
                 </ul>
                 <a href="./index.html"><p>Log In</p></a>
-                <CartWidget/>
+                <CartWidget itemsCarrito={itemsCarrito}/>
             </nav>
         </>
     );
