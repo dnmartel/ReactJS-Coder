@@ -7,9 +7,9 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar itemsCarrito={1}/>
+      <NavBar itemsCarrito={2}/>
       <main className="App-header">
-        <ItemListContainer greeting="Bienvenidos al ecommerce" />
+        <ItemListContainer greeting="Bienvenidos !" />
       </main>
     </div>
   );

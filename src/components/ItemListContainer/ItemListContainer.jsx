@@ -1,11 +1,39 @@
-import ItemCount from "../ItemCount/ItemCount";
+import ItemList from "./ItemList";
+import { useEffect, useState } from 'react';
+import productos from "../mock/productos"
 
 const ItemListContainer = ({ greeting }) => {
+
+    const [items, setItems] = useState([]);
+
+
+
+    useEffect(() => {
+        const traerProductos = new Promise((res, rej) => {
+            setTimeout(() => {
+                res(productos);
+            }, 2000)
+        });
+
+
+        traerProductos
+            .then((data) => {
+                setItems(data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+    }, []);
+
+
 
     return (
         <>
             <h2>{greeting}</h2>
-            <ItemCount stock={10} initial={1}/>
+
+            <ItemList items={items} />
+
         </>
     );
 }

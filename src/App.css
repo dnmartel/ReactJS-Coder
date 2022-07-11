@@ -28,11 +28,41 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.il-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.item-flex {
+  border: #ffffff 1px solid;
+  margin: 2em 0;
+  width: 300px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.il-flex div p {
+  font-size: .75em;
+  margin: 0;
+}
+
+.il-flex div h5 {
+  margin: 1em 0;
+}
+
+.ItemCount {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 10em;
+  height: 2em
+}
+
+div.ItemCount h5 {
+  margin: 0 1em
 }
