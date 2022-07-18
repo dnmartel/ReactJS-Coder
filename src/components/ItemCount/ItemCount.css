@@ -1,0 +1,30 @@
+div.ItemCount-section {
+    display: flex;
+    flex-direction: column;
+    color: #161616;
+}
+
+.ItemCount {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    margin-bottom: 1em;
+}
+
+
+div.ItemCount h5 {
+    margin: 0 1em
+}
+
+div.ItemCount-section span {
+    font-size: 1em;
+    align-self: center;
+    color: #161616;
+} 
+div.ItemCount-section span strong {
+    display: inline-block;
+    margin: 1em 0;
+    font-size: 1.2em;
+}

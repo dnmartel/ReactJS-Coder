@@ -1,19 +1,27 @@
+import ItemCount from "../ItemCount/ItemCount"
+import "./ItemDetail.css"
 
 const ItemDetail = ({ detail }) => {
+    
+    const { title, price, pictureUrl, description, stock } = detail;
 
-    if (detail[0] === undefined) {
-        return;
-    } else
 
-        return (
-            <div style={{fontSize: ".5em", margin: 0, outline: "1px solid black"}}>
-                <p style={{margin: 0, }}> Item detail</p>
-                <p style={{margin: 0, }}> {detail[0].title} </p>
-                <p style={{ fontSize: ".5em" }}> Descripcion: {detail[0].description} </p>
-                <img src={detail[0].pictureUrl} alt={detail[0].title} width="150px" />
-                <h6> Precio: {detail[0].price} </h6>
+    return (
+        <>
+            <div className="itemDetail-container">
+                <section>
+                    <img src={pictureUrl} alt={title} />
+                </section>
+                <aside>
+                    <h2> {title} </h2>
+                    <p> Descripcion: {description.repeat(10)} </p>
+                    <h3> Precio: {price} </h3>
+                    <ItemCount stock={stock} initial={1} precio={price} />
+                </aside>
             </div>
-        )
+
+        </>
+    )
 }
 
 

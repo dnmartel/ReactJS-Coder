@@ -3,10 +3,8 @@ import Item from "./Item";
 
 const ItemList = ({ items }) => {
     return (
-        <div className="il-flex">
-            {items.map((item) => (
-                <Item item={item} key={item.id} />
-            ))}
+        <div className="itemList-container">
+            {items.map(item => <Item key={item.id} {...item} />)}
         </div>
     )
 }

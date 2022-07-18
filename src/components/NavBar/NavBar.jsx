@@ -1,19 +1,22 @@
 import './NavBar.css';
 import logo from './clirpg-logo.png'
 import CartWidget from '../CartWidget/CartWidget';
+import { Link } from 'react-router-dom'
 
-function NavBar({itemsCarrito}) {
+function NavBar({ itemsCarrito }) {
     return (
         <>
             <nav className="NavBar">
-                <img src={logo} alt="Logo" />
+                <Link to="/">
+                    <img src={logo} alt="Logo" />
+                </Link>
                 <ul>
-                    <a href="./index.html"><li>Inicio</li></a>
-                    <a href="./index.html"><li>Productos</li></a>
-                    <a href="./index.html"><li>Categorias</li></a>
+                    <Link to="/">Inicio</Link>
+                    <Link to="/categorias/cat1">Categoria 1</Link>
+                    <Link to="/categorias/cat2">Categoria 2</Link>
                 </ul>
-                <a href="./index.html"><p>Log In</p></a>
-                <CartWidget itemsCarrito={itemsCarrito}/>
+                
+                <CartWidget itemsCarrito={itemsCarrito} />
             </nav>
         </>
     );

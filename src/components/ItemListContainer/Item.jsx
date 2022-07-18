@@ -1,20 +1,19 @@
 import { Button } from "@mui/material";
+import { Link } from 'react-router-dom';
+import './Item.css';
 
-let style = "font-size: .8em"
 
-const Item = ({ item }) => {
+const Item = ({ title, pictureUrl, description, price, id }) => {
     return (
         <div className="item-flex">
-            <h5> {item.title} </h5>
-            <p style={{ style }}> Descripcion: {item.description} </p>
-            <h5> Precio: {item.price} </h5>
-            <img src={item.pictureUrl} alt={item.title} width="80px" />
-
-            <Button size="small" variant="outlined" onClick={() => {alert("Aca deberia aparecer el detalle, todavia no lo vimos")}
-
-            }> Ver detalle del producto </Button>
-            {/* <ItemCount stock={10} initial={1} /> */}
-        </div>
+            <img src={pictureUrl} alt={title} />
+            <div>
+                <h5>${price}</h5>
+                <p>{description}</p>
+                <h6> {title} </h6>
+            </div>
+            <Link to={`/item/${id}`}><Button size="small" variant="outlined"> Ver detalle del producto </Button></Link>
+        </div >
     )
 }
 

@@ -1,0 +1,50 @@
+.itemList-container {
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    width: 100%;
+    font-size: calc(10px + 2vmin);
+    color: #161616;
+    gap: 1em;
+    text-align: center;
+    padding: 2em 0;
+}
+
+
+.item-flex {
+    width: 150px;
+    display: flex;
+    flex-flow: column nowrap;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    align-items: center;
+    color: #161616;
+    padding: .2em;
+    flex-basis: 30%
+}
+
+div.item-flex h6 {
+    margin: .5em 0;
+}
+
+
+div.item-flex p {
+    font-size: .75em;
+    margin: 0;
+}
+
+div.item-flex img {
+    width: 250px;
+    height: 200px;
+}
+
+div.item-flex Link {
+    margin: .5em 0;
+}

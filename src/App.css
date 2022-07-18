@@ -1,20 +1,10 @@
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,47 +12,11 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 2em 0;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-.il-flex {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.item-flex {
-  border: #ffffff 1px solid;
-  margin: 2em 0;
-  width: 300px;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-}
-
-.il-flex div p {
-  font-size: .75em;
-  margin: 0;
-}
-
-.il-flex div h5 {
-  margin: 1em 0;
-}
-
-.ItemCount {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 10em;
-  height: 2em
-}
-
-div.ItemCount h5 {
-  margin: 0 1em
+div.loading h2 {
+  color: #161616;
+  text-align: center;
+  margin-top: -3em;
 }
