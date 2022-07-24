@@ -38,3 +38,8 @@ div.itemDetail-container aside p {
     font-size: 1em; 
     font-family: monospace;
 }
+
+div.itemDetail-container aside a {
+    
+    color: #1976d2;
+}

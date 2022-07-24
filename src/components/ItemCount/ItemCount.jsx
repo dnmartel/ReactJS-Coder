@@ -14,7 +14,7 @@ const ItemCount = ({ stock, initial, precio, onAdd }) => {
                 <Button size="small" variant="outlined" onClick={() => { (stock < contador) ? setContador(contador + 0) : setContador(contador + 1) }}> +1</Button>
                 {(contador < 1) && setContador(1)}
             </div>
-            <Button variant="outlined" onClick={onAdd}>Agregar al carrito</Button>
+            <Button variant="outlined" onClick={() => onAdd(contador)}>Agregar al carrito</Button>
             <span><strong>Total: ${contador * precio}</strong></span>
         </div>
     );
