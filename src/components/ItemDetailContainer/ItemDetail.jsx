@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount"
 import Button from '@mui/material/Button';
 import "./ItemDetail.css"
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ detail }) => {
 
@@ -12,8 +13,10 @@ const ItemDetail = ({ detail }) => {
 
     const onAdd = (counter) => {
         setCounter(counter);
+        addItem(detail, counter);
     };
 
+    const { addItem, removeItem, clearCart, logCart } = useContext(CartContext)
 
     return (
         <>
@@ -27,8 +30,14 @@ const ItemDetail = ({ detail }) => {
                     <h3> Precio: {price} </h3>{
                         (counter === 0) ? <ItemCount stock={stock} initial={1} precio={price} onAdd={onAdd} /> :
                             (<>
-                                {/* <ItemCount stock={stock} initial={1} precio={price} onAdd={onAdd} /> */}
-                                <Button variant="outlined">
+                                {<ItemCount stock={stock} initial={1} precio={price} onAdd={onAdd} />}
+                                <Button className="btnCartContext" variant="outlined" onClick={() => removeItem(detail.id)}>Remover Item</Button>
+                                <Button className="btnCartContext" variant="outlined" onClick={() => {
+                                    clearCart()
+                                    setCounter(0);
+                                }}>Vaciar Carrito</Button>
+                                <Button variant="outlined" onClick={logCart}>VER CART EN LOG</Button>
+                                <Button className="btnCartContext" variant="outlined">
                                     <Link to="/cart"> Ir al carrito</Link>
                                 </Button>
                             </>
