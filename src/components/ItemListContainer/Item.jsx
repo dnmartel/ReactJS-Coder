@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import './Item.css';
 
 
-const Item = ({ title, pictureUrl, type, price, id }) => {
+const Item = ({ title, image, categoryId, price, id }) => {
     return (
         <div className="cardItem">
-            <p className="cardItem-id">#{id}</p>
-            <img src={pictureUrl} alt={title} />
+            {/* <p className="cardItem-id">#{id}</p> */}
+            <img src={image} alt={title} />
             <div className="cardData">
                 <h5>{title}</h5>
-                <p>Tipo: {type}</p>
+                <p>Tipo: {categoryId}</p>
             </div>
             <hr />
             <h6>${price}</h6>

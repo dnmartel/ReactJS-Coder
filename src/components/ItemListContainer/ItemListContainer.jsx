@@ -2,6 +2,7 @@ import ItemList from "./ItemList";
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 
 
@@ -11,14 +12,31 @@ const ItemListContainer = ({ greeting }) => {
     const [loading, setLoading] = useState(true);
     const { categoria } = useParams();
 
+
     useEffect(() => {
         //Reseteo la categoria al iniciar
         setItems([]);
         setLoading(true);
 
         const traerProductos = async () => {
+            const db = getFirestore();
+            await getDocs(collection(db, "items")).then((snapshot) => {
+                const dataExtraida = snapshot.docs.map((datos) => datos.data());
+                const idExtraido = snapshot.docs.map((datos) => datos.id);
+                let consultaUnificada = [];
+                dataExtraida.forEach(e => (
+                    (categoria !== undefined) ? ((e.categoryId === categoria) && (consultaUnificada.push({ ...e, id: idExtraido[dataExtraida.indexOf(e)] }))) :
+                        (consultaUnificada.push({ ...e, id: idExtraido[dataExtraida.indexOf(e)] }))
+                ))
+    
+                setItems(consultaUnificada)
+    
+            })
+    
+        }
+        /* const traerProductos = async () => {
             const initialResponse = fetch(
-                'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0'
+                'https://pokeapi.co/api/v2/pokemon?limit=500&offset=0'
             )
                 .then((res) => res.json())
                 .then((data) => {
@@ -27,7 +45,7 @@ const ItemListContainer = ({ greeting }) => {
                 .catch((err) => { console.log(err) })
 
             initialResponse.then(listaProductos => {
-                Promise.all(
+                Promise.allSettled(
                     listaProductos.map(async (p) => {
                         return await fetch(p.url)
                             .then((res) => res.json())
@@ -59,7 +77,6 @@ const ItemListContainer = ({ greeting }) => {
                                                 pictureUrl: detallePokemon.sprites.front_default,
                                                 price: detallePokemon.base_experience,
                                                 categoria: detallePokemon.types[0].type.name,
-                                                stock: 15,
                                                 id: detallePokemon.id
                                             }]
                                     }
@@ -70,12 +87,13 @@ const ItemListContainer = ({ greeting }) => {
                 )
             }
             )
-        };
+        }; */
+
 
         traerProductos();
         setTimeout(() => {
             setLoading(false)
-        }, 500)
+        }, 2000)
 
 
     }, [categoria]);

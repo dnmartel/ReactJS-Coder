@@ -1,49 +1,37 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount"
-import Button from '@mui/material/Button';
 import "./ItemDetail.css"
 import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ detail }) => {
 
-    const { title, price, pictureUrl, description, stock } = detail;
+    const { title, price, image, description, stock, id } = detail;
 
-    const [counter, setCounter] = useState(0);
+    const { addItem, removeItem } = useContext(CartContext)
+
+    const [counter, setCounter] = useState(1);
 
     const onAdd = (counter) => {
         setCounter(counter);
         addItem(detail, counter);
     };
 
-    const { addItem, removeItem, clearCart, logCart } = useContext(CartContext)
+    const onRemove = () => {
+        removeItem(id)
+    }
+
 
     return (
         <>
             <div className="itemDetail-container">
                 <section>
-                    <img src={pictureUrl} alt={title} />
+                    <img src={image} alt={title} />
                 </section>
                 <aside>
                     <h2> {title} </h2>
                     <p> Descripcion: {description} </p>
-                    <h3> Precio: {price} </h3>{
-                        (counter === 0) ? <ItemCount stock={stock} initial={1} precio={price} onAdd={onAdd} /> :
-                            (<>
-                                {<ItemCount stock={stock} initial={1} precio={price} onAdd={onAdd} />}
-                                <Button className="btnCartContext" variant="outlined" onClick={() => removeItem(detail.id)}>Remover Item</Button>
-                                <Button className="btnCartContext" variant="outlined" onClick={() => {
-                                    clearCart()
-                                    setCounter(0);
-                                }}>Vaciar Carrito</Button>
-                                <Button variant="outlined" onClick={logCart}>VER CART EN LOG</Button>
-                                <Button className="btnCartContext" variant="outlined">
-                                    <Link to="/cart"> Ir al carrito</Link>
-                                </Button>
-                            </>
-                            )
-                    }
-
+                    <h3> Precio: {price} </h3>
+                    <ItemCount stock={stock} initial={1} onRemove={onRemove} onAdd={onAdd} counter={counter} setCounter={setCounter} />
                 </aside>
             </div>
 

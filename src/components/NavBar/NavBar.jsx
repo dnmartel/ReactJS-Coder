@@ -2,7 +2,7 @@ import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom'
 
-function NavBar({ itemsCarrito }) {
+function NavBar() {
     return (
         <>
             <nav className="NavBar">
@@ -33,7 +33,7 @@ function NavBar({ itemsCarrito }) {
 
                 </ul>
 
-                <CartWidget itemsCarrito={itemsCarrito} />
+                <CartWidget />
             </nav>
         </>
     );
