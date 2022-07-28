@@ -1,12 +1,22 @@
+import { Link } from 'react-router-dom'
 import Badge from '@mui/material/Badge';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { CartContext } from "../../context/CartContext";
+import { useContext } from "react";
 
-const CartWidget = ({itemsCarrito}) => {
+const CartWidget = () => {
+
+    const { cartNum } = useContext(CartContext);
+
+
+
     return (
         <div className='cartWidget'>
-            <Badge badgeContent={itemsCarrito} color="primary">
-                <ShoppingCartOutlinedIcon color="primary" />
-            </Badge>
+            <Link to="/cart">
+                <Badge badgeContent={cartNum()} color="primary">
+                    <ShoppingCartOutlinedIcon color="primary" />
+                </Badge>
+            </Link>
         </div>
     );
 }

@@ -8,7 +8,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
     <App/>
-    {/* <React.StrictMode>
+    {/*
+    Comentado ya que al traer datos de apis, duplicaba consultas
+    <React.StrictMode>
     <App />
     </React.StrictMode> */}
   </>

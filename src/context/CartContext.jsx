@@ -16,30 +16,39 @@ const Provider = ({ children }) => {
         )
     }
 
+    // Agrega item al carrito o suma la cantidad a existente
     const addItem = (detail, counter) => {
-
         if (isInCart(detail.id)) {
             //Si el item está en el array, sumo la cantidad
             let obj = cart.find(o => o.id === detail.id);
-            cart[cart.indexOf(obj)].cantidad = obj.cantidad + counter;
-
+            cart[cart.indexOf(obj)].cantidad += counter;            
+            setCart([...cart])
         } else {
             setCart([...cart, { ...detail, cantidad: counter }])
         }
-
     }
 
+
+    // Remueve item por ID
     const removeItem = (id) => {
-
-        let obj = cart.find(o => o.id === id);
-        cart.splice((cart.indexOf(obj)), 1);
-        alert("Item removido")
-
+        cart.length === 1
+            ? setCart([])
+            : setCart(cart.filter(n => n.id !== id))
     }
 
+    //Contador de items del carrito
+    const cartNum = () => {
+        return cart.reduce((total, op) => total += op.cantidad, 0)
+    }
+
+    //Vacia el carrito
     const clearCart = () => {
         setCart([]);
-        alert("Se vació el carrito")
+    }
+
+    //Precio total del carrito
+    const cartTotal = () => {
+        return cart.reduce((total, item) => total += item.price * item.cantidad, 0)
     }
 
     const logCart = () => {
@@ -47,7 +56,7 @@ const Provider = ({ children }) => {
     }
 
     return (
-        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, logCart }}>
+        <CartContext.Provider value={{ cart, cartNum, cartTotal, addItem, removeItem, clearCart, logCart }}>
             {children}
         </CartContext.Provider>
     )
