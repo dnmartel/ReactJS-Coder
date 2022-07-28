@@ -3,16 +3,21 @@ import { Link } from 'react-router-dom';
 import './Item.css';
 
 
-const Item = ({ title, pictureUrl, description, price, id }) => {
+const Item = ({ title, pictureUrl, type, price, id }) => {
     return (
-        <div className="item-flex">
+        <div className="cardItem">
+            <p className="cardItem-id">#{id}</p>
             <img src={pictureUrl} alt={title} />
-            <div>
-                <h5>${price}</h5>
-                <p>{description}</p>
-                <h6> {title} </h6>
+            <div className="cardData">
+                <h5>{title}</h5>
+                <p>Tipo: {type}</p>
             </div>
-            <Link to={`/item/${id}`}><Button size="small" variant="outlined"> Ver detalle del producto </Button></Link>
+            <hr />
+            <h6>${price}</h6>
+
+            <Link to={`/item/${id}`}>
+                <Button size="small" variant="outlined"> Detalle </Button>
+            </Link>
         </div >
     )
 }

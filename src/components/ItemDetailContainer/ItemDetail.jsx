@@ -26,7 +26,7 @@ const ItemDetail = ({ detail }) => {
                 </section>
                 <aside>
                     <h2> {title} </h2>
-                    <p> Descripcion: {description.repeat(10)} </p>
+                    <p> Descripcion: {description} </p>
                     <h3> Precio: {price} </h3>{
                         (counter === 0) ? <ItemCount stock={stock} initial={1} precio={price} onAdd={onAdd} /> :
                             (<>
