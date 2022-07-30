@@ -2,7 +2,7 @@ import ItemList from "./ItemList";
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs, query, where, getFirestore } from "firebase/firestore";
 
 
 
@@ -20,19 +20,30 @@ const ItemListContainer = ({ greeting }) => {
 
         const traerProductos = async () => {
             const db = getFirestore();
-            await getDocs(collection(db, "items")).then((snapshot) => {
-                const dataExtraida = snapshot.docs.map((datos) => datos.data());
-                const idExtraido = snapshot.docs.map((datos) => datos.id);
-                let consultaUnificada = [];
-                dataExtraida.forEach(e => (
-                    (categoria !== undefined) ? ((e.categoryId === categoria) && (consultaUnificada.push({ ...e, id: idExtraido[dataExtraida.indexOf(e)] }))) :
-                        (consultaUnificada.push({ ...e, id: idExtraido[dataExtraida.indexOf(e)] }))
-                ))
-    
-                setItems(consultaUnificada)
-    
-            })
-    
+            if (categoria !== undefined) {
+                const q = await query(collection(db, "items"), where("categoryId", "==", categoria))
+                await getDocs(q).then((snapshot) => {
+                    const dataExtraida = snapshot.docs.map((datos) => datos.data());
+                    const idExtraido = snapshot.docs.map((datos) => datos.id);
+                    let consultaUnificada = [];
+                    dataExtraida.forEach(e => (
+                        consultaUnificada.push({ ...e, id: idExtraido[dataExtraida.indexOf(e)] })
+                    ))
+                    setItems(consultaUnificada)
+                })
+            } else {
+                await getDocs(collection(db, "items")).then((snapshot) => {
+                    const dataExtraida = snapshot.docs.map((datos) => datos.data());
+                    const idExtraido = snapshot.docs.map((datos) => datos.id);
+                    let consultaUnificada = [];
+                    dataExtraida.forEach(e => (
+                        consultaUnificada.push({ ...e, id: idExtraido[dataExtraida.indexOf(e)] })
+                    ))
+                    setItems(consultaUnificada)
+                })
+            }
+
+
         }
         /* const traerProductos = async () => {
             const initialResponse = fetch(
