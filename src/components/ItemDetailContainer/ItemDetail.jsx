@@ -5,7 +5,7 @@ import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ detail }) => {
 
-    const { title, price, image, description, stock, id } = detail;
+    const { title, price, altImage, description, stock, id } = detail;
 
     const { addItem, removeItem } = useContext(CartContext)
 
@@ -25,7 +25,7 @@ const ItemDetail = ({ detail }) => {
         <>
             <div className="itemDetail-container">
                 <section>
-                    <img src={image} alt={title} />
+                    <img src={altImage} alt={title} />
                 </section>
                 <aside>
                     <h2> {title} </h2>

@@ -36,7 +36,7 @@ const Cart = () => {
                 return (
                     <>
                         <div key={e.id} style={{ display: "flex", justifyContent: "space-between", margin: "1.5em 3em" }}>
-                            <img src={e.pictureUrl} alt={e.title} width="75px" />
+                            <img src={e.image} alt={e.title} width="75px" />
                             <h2>Pokemon: {e.title}</h2>
                             <h3>Cantidad: {e.cantidad}</h3>
                             <p>Subtotal: {e.cantidad * e.price}</p>

@@ -9,44 +9,116 @@
     gap: 1.2em;
 }
 
+.cardColor {
+    display: inline-block;
+    width: 100%;
+    height: 100px;
+}
+
+.type-grass {
+    background-color: greenyellow;
+}
+
+.type-fire {
+    background-color: orange;
+}
+
+.type-water {
+    background-color: lightblue;
+}
+
+.type-electric {
+    background-color: rgb(255, 252, 47);
+}
+
+.type-poison {
+    background-color: rgb(137, 47, 255);
+}
 
 .cardItem {
     background-color: white;
-    width: 10em;
+    width: 8em;
     border-radius: 1em;
     overflow: hidden;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
     border: 2px solid black;
-    min-width: 10em;
+    min-width: 8em;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
 }
 
-.cardItem h6,
-.cardItem h5 {
+.cardInterior {
+    background-color: white;
+    margin-top: -25px;
+    border-radius: .5em .5em 0 0;
+    overflow: visible;
+    width: 8em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.cardData{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.cardItemTitle {
     margin: .1em 0;
     text-transform: capitalize;
 }
 
+.cardItemPrice {
+    margin: .45em 0 0 0;
+    text-transform: capitalize;
+}
 
 .cardItem p {
-    font-size: .75em;
     margin: 0;
+}
+
+.cardItemId {
+    font-weight: 600;
+    font-size: .5em;
 }
 
 .cardItem img {
     width: 8em;
-    outline: 4px solid white;
-    border-radius: 50%;
-    margin-top: 1em;
+    overflow: visible;
+    margin: -100px 0 -50px 0;
 }
 
-.cardItem a button {
-    margin: 1em 0;
+.cardItemButton,
+.cardItemLink {
+    margin-bottom: .5em;
 }
 
 .cardItem hr {
     width: 10em;
     margin: 0;
+}
+
+.cardItemCategories {
+    align-self: center;
+    border-radius: 5px;
+    height: .6em;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 .2em;
+    
+}
+
+.cardItemCat {
+    font-size: .4em;
+    font-weight: 600;
+}
+
+.iconType {
+    margin-right: .2em;
 }
