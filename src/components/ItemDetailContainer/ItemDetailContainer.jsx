@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
 import Loading from "../Loading/Loading";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs, getFirestore, limit } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
@@ -59,7 +59,7 @@ const ItemDetailContainer = () => {
 
         const getItem = async () => {
             const db = getFirestore();
-            await getDocs(collection(db, "items")).then((snapshot) => {
+            await getDocs(collection(db, "items"), limit(1)).then((snapshot) => {
                 const dataExtraida = snapshot.docs.map((datos) => datos.data());
                 const idExtraido = snapshot.docs.map((datos) => datos.id);
                 let consultaUnificada = [];
