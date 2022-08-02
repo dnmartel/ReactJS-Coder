@@ -11,7 +11,6 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams();
 
-    
 
     useEffect(() => {
         setLoading(true);
@@ -59,7 +58,7 @@ const ItemDetailContainer = () => {
 
         const getItem = async () => {
             const db = getFirestore();
-            await getDocs(collection(db, "items"), limit(1)).then((snapshot) => {
+            await getDocs(collection(db, "PokeBase"), limit(1)).then((snapshot) => {
                 const dataExtraida = snapshot.docs.map((datos) => datos.data());
                 const idExtraido = snapshot.docs.map((datos) => datos.id);
                 let consultaUnificada = [];
