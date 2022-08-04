@@ -15,50 +15,9 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         setLoading(true);
 
-        /* const getItem = async () => {
-            const initialResponse = fetch(
-                'https://pokeapi.co/api/v2/pokemon?limit=500&offset=0'
-            )
-                .then((res) => res.json())
-                .then((data) => {
-                    return data.results
-                })
-                .catch((err) => { console.log(err) })
-
-            initialResponse.then(listaProductos => {
-                Promise.allSettled(
-                    listaProductos.map(async (p) => {
-                        return await fetch(p.url)
-                            .then((res) => res.json())
-                            .then((pokemon) => {
-                                
-                                if (pokemon.id === Number(id)) {
-                                    return pokemon
-                                }
-                            }
-                            )
-                            .then((detallePokemon) => {
-                                setDetail(
-                                    {
-                                        title: detallePokemon.name,
-                                        description: detallePokemon.types[0].type.name,
-                                        pictureUrl: detallePokemon.sprites.other.dream_world.front_default,
-                                        price: detallePokemon.base_experience,
-                                        categoria: detallePokemon.types[0].type.name,
-                                        stock: 10,
-                                        id: detallePokemon.id
-                                    }
-                                )
-                            })
-                    })
-                )
-            }
-            )
-        }; */
-
         const getItem = async () => {
             const db = getFirestore();
-            await getDocs(collection(db, "PokeBase"), limit(1)).then((snapshot) => {
+            await getDocs(collection(db, "PokeBaseTest"), limit(1)).then((snapshot) => {
                 const dataExtraida = snapshot.docs.map((datos) => datos.data());
                 const idExtraido = snapshot.docs.map((datos) => datos.id);
                 let consultaUnificada = [];

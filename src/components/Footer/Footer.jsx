@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom"
 import { Button } from "@mui/material";
+import "./Footer.css";
 
 const Footer = () => {
+
     return (
         <>
-            <nav className="NavBar">
+            <nav className={`${window.location.pathname === '/cart' ? "FooterCart" : "Footer"}`}>
 
 
-                <Button style={{ marginLeft: `1em` }} onClick={() => {
+                <Button onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
                 }}>INICIO</Button>
 
@@ -20,4 +22,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default Footer;

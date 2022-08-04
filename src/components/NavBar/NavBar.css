@@ -52,9 +52,10 @@ nav div.cartWidget {
 .NavBar ul ul {
     display: none;
     position: absolute;
-    left: -4em;
+    left: -3.5em;
     background: #161616;
     padding: .2em 0;
+    border-radius: 10px;
 }
 
 .NavBar ul ul a {
@@ -69,6 +70,7 @@ nav div.cartWidget {
     align-items: center;
     justify-content: center;
     width: 200px;
+    z-index: 2;
 }
 
 .NavBar ul li:hover>ul li {

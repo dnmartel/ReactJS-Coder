@@ -1,5 +1,3 @@
-import CircularProgress from '@mui/material/CircularProgress';
-
 const Loading = () => {
     return (
         <div style={{
@@ -9,7 +7,7 @@ const Loading = () => {
             height: "100vh",
             flexFlow: "column nowrap"
         }}>
-            <CircularProgress />
+            <img style={{height: "100px"}}src="https://res.cloudinary.com/dth4axit0/image/upload/v1659539465/loader_kqfh9i.gif" alt="Loader" />
         </div>
     );
 }

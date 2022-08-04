@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import ItemCount from "../ItemCount/ItemCount"
 import "./ItemDetail.css"
 import { CartContext } from "../../context/CartContext";
+import Footer from "../Footer/Footer";
+
 
 const ItemDetail = ({ detail }) => {
 
@@ -34,7 +36,7 @@ const ItemDetail = ({ detail }) => {
                     <ItemCount stock={stock} initial={1} onRemove={onRemove} onAdd={onAdd} counter={counter} setCounter={setCounter} />
                 </aside>
             </div>
-
+            <Footer />
         </>
     )
 }

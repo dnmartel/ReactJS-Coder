@@ -1,0 +1,32 @@
+.Footer img {
+    width: 60px;
+    margin-right: 2em;
+}
+
+.Footer {
+    position: relative;
+    bottom: -120px;
+    width: 100%;
+}
+
+.Footer button {
+    margin-left: 1em;
+}
+
+.FooterCart {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.FooterCart button{
+    margin-left: 1em;
+}
+
+.FooterCart img {
+    width: 60px;
+    margin-right: 2em;
+}
