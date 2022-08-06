@@ -1,8 +1,4 @@
-import { createContext } from "react"
-import { useState } from "react";
-
-//removeItem(itemId) // Remover un item del cart por usando su id       /////          clear()
-
+import { createContext, useState } from "react"
 
 export const CartContext = createContext();
 
@@ -21,7 +17,7 @@ const Provider = ({ children }) => {
         if (isInCart(detail.id)) {
             //Si el item está en el array, sumo la cantidad
             let obj = cart.find(o => o.id === detail.id);
-            cart[cart.indexOf(obj)].cantidad += counter;            
+            cart[cart.indexOf(obj)].cantidad += counter;
             setCart([...cart])
         } else {
             setCart([...cart, { ...detail, cantidad: counter }])
@@ -54,6 +50,7 @@ const Provider = ({ children }) => {
     const logCart = () => {
         console.log(cart);
     }
+
 
     return (
         <CartContext.Provider value={{ cart, cartNum, cartTotal, addItem, removeItem, clearCart, logCart }}>

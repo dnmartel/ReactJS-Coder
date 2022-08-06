@@ -1,12 +1,12 @@
-import ItemList from "./ItemList";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
-import { collection, getDocs, query, where, getFirestore } from "firebase/firestore";
+import ItemList from "./ItemList";
 
 
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
 
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
