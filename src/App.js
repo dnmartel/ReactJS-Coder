@@ -30,7 +30,7 @@ function App() {
           <Route path="/signup" element={<SignUp />}/>
           <Route path="/*" element={
             <main style={{ display: "flex", justifyContent: 'center', padding: "2rem" }}>
-            <p>There's nothing here!</p>
+            <p>404</p>
             </main>}/>
         </Routes>
       </BrowserRouter>

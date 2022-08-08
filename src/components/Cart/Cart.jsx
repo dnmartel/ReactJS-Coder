@@ -1,7 +1,7 @@
-import { CartContext } from "../../context/CartContext";
-import { useContext } from "react";
-import { useNavigate, Link } from "react-router-dom";
 import { Button } from "@mui/material";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 import Footer from "../Footer/Footer";
 import "./Cart.css";
 
@@ -52,11 +52,12 @@ const Cart = () => {
 
                 <h2 style={{ textAlign: "right", marginRight: "1em" }}>Total: {cartTotal()}</h2>
 
-            </div>
-            <Link to="/checkout">
-                <Button variant="outlined" >
-                    Checkout</Button>
+                <Link to="/checkout">
+                <Button variant="outlined"> Checkout </Button>
             </Link>
+
+            </div>
+            
 
             <Footer />
         </div>

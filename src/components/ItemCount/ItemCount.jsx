@@ -1,12 +1,9 @@
-import { CartContext } from '../../context/CartContext';
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import "./ItemCount.css"
 
 const ItemCount = ({ stock, initial, onRemove, onAdd, setCounter, counter }) => {
-
-    const { clearCart, logCart } = useContext(CartContext)
 
     //Muestra stock
     const [muestraStock, setMuestraStock] = useState(stock - 1);
@@ -19,7 +16,7 @@ const ItemCount = ({ stock, initial, onRemove, onAdd, setCounter, counter }) => 
         else {
             setCounter(counter + 1);
             setMuestraStock(muestraStock - 1);
-        }        
+        }
     }
 
     //Modifica los contadores
@@ -58,37 +55,37 @@ const ItemCount = ({ stock, initial, onRemove, onAdd, setCounter, counter }) => 
 
     return (
 
-        <>
-
-            <div className='ItemCount-section'>
-                <div className='ItemCount'>
-
-                    <Button size="small" variant="outlined" onClick={restaProd}> -1</Button>
-
-                    <h5>{realStock >= 1 ? counter : "0"}</h5>
-
-                    <Button size="small" variant="outlined" onClick={sumarProd}> +1</Button>
-
-                </div>
 
 
+        <div className='ItemCount-section'>
+            <div className='ItemCount'>
 
-                <Button variant="outlined" onClick={addToCart}>Agregar al carrito</Button>
+                <Button size="small" variant="outlined" onClick={restaProd}> -1</Button>
 
-                <Button className="btnCartContext" variant="outlined" onClick={resProd}>Remover Item</Button>
-            <Button className="btnCartContext" variant="outlined" onClick={() => {
+                <h5>{realStock >= 1 ? counter : "0"}</h5>
+
+                <Button size="small" variant="outlined" onClick={sumarProd}> +1</Button>
+
+            </div>
+            <span className='stock'>Stock: {muestraStock} </span>
+
+
+
+            <Button variant="outlined" onClick={addToCart}>Agregar al carrito</Button>
+            <Button variant="outlined" onClick={resProd}>Remover Item</Button>
+            {/* <Button className="btnCartContext" variant="outlined" onClick={() => {
                 clearCart()
                 setCounter(1);
-            }}>Vaciar Carrito</Button>
-            <Button variant="outlined" onClick={logCart}>VER CART EN LOG</Button>
-            <Button className="btnCartContext" variant="outlined">
-                <Link to="/cart"> Ir al carrito</Link>
-            </Button>
+            }}>Vaciar Carrito</Button> */}
 
-            <span><strong>Stock disponible: {muestraStock} </strong></span>
-            {(realStock === 0) && (<Link to="/cart">Terminar compra</Link>)}
-        </div >
-        </>
+            {(stock !== realStock) && (
+                <Link to="/cart">
+                    <Button style={{ width: "100%", marginTop: "1em" }} variant="outlined">
+                        Ir al carrito
+                    </Button>
+                </Link>)}
+        </div>
+
     );
 }
 

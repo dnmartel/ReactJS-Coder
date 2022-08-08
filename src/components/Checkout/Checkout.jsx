@@ -1,10 +1,9 @@
 import { Button } from '@mui/material';
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import React from 'react';
-import "./Checkout.css";
-import { useContext, useState } from 'react';
-import { CartContext } from '../../context/CartContext';
+import React, { useContext, useState } from 'react';
 import { Navigate } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
+import "./Checkout.css";
 import Success from './Success';
 
 
@@ -64,7 +63,7 @@ const Checkout = () => {
 
 
     return (
-        <>
+        <div className='App'>
             <form className='formCompra'>
                 <input type="text" name="name" placeholder="Nombre" value={order.buyer.name} onChange={(e) => {
                     handleChange(e)
@@ -77,7 +76,7 @@ const Checkout = () => {
                 }} />
             </form>
             <Button variant="outlined" onClick={() => handleClick()}>Finalizar</Button>
-        </>
+        </div>
     )
 }
 

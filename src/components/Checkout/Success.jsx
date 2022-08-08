@@ -1,5 +1,5 @@
-import "./Success.css";
 import { Navigate } from 'react-router-dom';
+import "./Success.css";
 
 const Success = (/* { id } */ ) => {
 
