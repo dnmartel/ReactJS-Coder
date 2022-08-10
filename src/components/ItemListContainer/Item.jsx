@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import { Link } from 'react-router-dom';
-import { typeSelector, altTypeSelector } from "./selectorFunctions";
+import { typeSelector, altTypeSelector } from "../auxFunctions";
 import './Item.css';
 
 

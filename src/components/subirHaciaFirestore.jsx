@@ -4,7 +4,7 @@ export default function subirHaciaFirestore() {
 
     const traerProductos = async () => {
         const initialResponse = fetch(
-            'https://pokeapi.co/api/v2/pokemon?limit=50&offset=25'
+            'https://pokeapi.co/api/v2/pokemon?limit=100&offset=100'
         )
             .then((res) => res.json())
             .then((data) => {

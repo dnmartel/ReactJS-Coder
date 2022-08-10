@@ -11,7 +11,6 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams();
 
-
     useEffect(() => {
         setLoading(true);
 
@@ -22,19 +21,23 @@ const ItemDetailContainer = () => {
                 const idExtraido = snapshot.docs.map((datos) => datos.id);
                 let consultaUnificada = [];
                 dataExtraida.forEach(e => (
-                    (id === idExtraido[dataExtraida.indexOf(e)]) && 
+                    (id === idExtraido[dataExtraida.indexOf(e)]) &&
                     (consultaUnificada = { ...e, id: idExtraido[dataExtraida.indexOf(e)] })
                 ))
-                
+
                 setDetail(consultaUnificada)
             })
-    
+
         }
 
         getItem();
         setTimeout(() => {
             setLoading(false)
-        }, 2000)
+        }, 2000);
+
+        return () => {
+            document.body.style.backgroundImage = ``;
+        };
 
     }, [id]);
 

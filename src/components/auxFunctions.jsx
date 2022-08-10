@@ -93,3 +93,4 @@ export const altTypeSelector = (altType) => {
         return <><DarkModeIcon style={{ fontSize: "medium" }} className="iconType" /><p className="cardItemCat">Oscuro</p></>
     }
 }
+

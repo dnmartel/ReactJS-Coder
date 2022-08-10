@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import "./ItemCount.css"
 
 const ItemCount = ({ stock, initial, onRemove, onAdd, setCounter, counter }) => {
@@ -71,16 +73,13 @@ const ItemCount = ({ stock, initial, onRemove, onAdd, setCounter, counter }) => 
 
 
 
-            <Button variant="outlined" onClick={addToCart}>Agregar al carrito</Button>
-            <Button variant="outlined" onClick={resProd}>Remover Item</Button>
-            {/* <Button className="btnCartContext" variant="outlined" onClick={() => {
-                clearCart()
-                setCounter(1);
-            }}>Vaciar Carrito</Button> */}
+            <Button className="agregarButton" size="large" variant="outlined" onClick={addToCart}><AddShoppingCartIcon size="large" />Agregar</Button>
+            <Button size="small" onClick={resProd}><RemoveShoppingCartIcon size="small" />Remover</Button>
+
 
             {(stock !== realStock) && (
                 <Link to="/cart">
-                    <Button style={{ width: "100%", marginTop: "1em" }} variant="outlined">
+                    <Button style={{ width: "100%", marginTop: "2em" }} variant="outlined">
                         Ir al carrito
                     </Button>
                 </Link>)}

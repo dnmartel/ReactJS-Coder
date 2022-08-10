@@ -1,10 +1,13 @@
+body {
+    height: 100%;
+}
+
 div.itemDetail-container {
-    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
-    width: 100%;
+    width: 95%;
     height: 100vh;
     color: #161616;
 }
@@ -14,22 +17,37 @@ div.itemDetail-container section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 75%;
+    width: 50%;
+    margin-right: 10%;
 }
 
 div.itemDetail-container section img {
-    width: calc(50vw - 30%);
+    width: calc(50vw - 40%);
     overflow: hidden;
-
 }
 
-div.itemDetail-container aside {
+.cardAside {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 25%;
+    width: 10%;
+    min-width: 150px;
     padding: 1.5em;
+
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.bgImgDetail {
+    display: flex;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 .titleDetailContainer {
@@ -39,15 +57,21 @@ div.itemDetail-container aside {
     padding: .1em;
 }
 
+.titleBGDetail {
+    display: flex;
+    margin-bottom: -1em;
+    font-size: 6em;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: .1em;
+    color: #ffffff;
+}
+
 .titleDetail {
     margin: 0;
     text-transform: capitalize;
     letter-spacing: .1em;
-    color: #e3eeff;
-}
-
-div.itemDetail-container aside p {
-    font-family: monospace;
+    color: #ffffff;
 }
 
 .descriptionDetail {
@@ -55,10 +79,40 @@ div.itemDetail-container aside p {
     font-style: italic;
 }
 
+.hrDetail {
+    width: 100%;
+}
+
 .abilityDetail {
     font-size: .5em;
     margin: .2em 0;
-    align-self: flex-start;
+}
+
+.heightDetail,
+.weightDetail {
+    font-size: .75em;
+    margin: .5em 0 0 0;
+}
+
+.hwDetailContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.heightDetailSubContainer,
+.weightDetailSubContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 .5em;
+}
+
+.hwDetail {
+    display: inline-block;
+    font-weight: 300;
+    font-size: .5em;
+    margin: 0 .2em;
 }
 
 .priceDetailContainer {
@@ -79,7 +133,6 @@ div.itemDetail-container aside p {
 .unitPriceDetail {
     font-size: .5em;
 }
-
 
 div.itemDetail-container aside a {
 

@@ -1,5 +1,4 @@
 .itemList-container {
-    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -16,7 +15,7 @@
 }
 
 .type-grass {
-    background-color: greenyellow;
+    background-color: rgb(176, 233, 129);
 }
 
 .type-fire {
@@ -48,7 +47,7 @@
 }
 
 .type-bug {
-    background-color: rgb(176, 233, 129);
+    background-color: rgb(80, 143, 29);
 }
 
 .type-steel {
@@ -93,6 +92,7 @@
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
     border: 2px solid black;
     min-width: 8em;
+    min-height: 10em;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;

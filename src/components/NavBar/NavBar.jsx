@@ -30,7 +30,8 @@ function NavBar() {
                             <li><Link to="/categorias/electric">Tipo Electrico</Link></li>
                             <li><Link to="/categorias/fighting">Tipo Lucha</Link></li>
                             <li><Link to="/categorias/ground">Tipo Tierra</Link></li>
-                            <li><Link to="/categorias/ghost">Tipo Ghost</Link></li>
+                            <li><Link to="/categorias/dark">Tipo Ghost</Link></li>
+                            <li><Link to="/categorias/ice">Tipo Hielo</Link></li>
                         </ul>
                     </li>
 

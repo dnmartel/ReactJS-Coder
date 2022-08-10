@@ -6,9 +6,7 @@ const Footer = () => {
 
     return (
         <>
-            <nav className={`${window.location.pathname === '/cart' ? "FooterCart" : "Footer"}`}>
-
-
+            <nav className="Footer"  >
                 <Button onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
                 }}>INICIO</Button>

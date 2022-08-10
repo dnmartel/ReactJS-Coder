@@ -1,3 +1,86 @@
+body {
+    background-color: #eeeffc;
+}
+
+.cartTitle {
+    color: black;
+    font-size: 2em;
+}
+
 .carritoVacio {
     text-align: center;
+}
+
+.sectionCart {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 95%;
+    height: 100vh;
+    color: #161616;
+    overflow: hidden;
+}
+
+.cartList {
+    width: 70%;
+    overflow-y: auto;
+}
+
+.filaPar {
+    background-color: aliceblue;
+}
+
+.cartListItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cartListItem:first-child {
+    margin-top: 1.5em;
+}
+
+.cartListItem {
+    color: black;
+}
+
+.cartListItem p.titleCartListItem {
+    width: 3em;
+    font-weight: 600;
+    font-size: .75em;
+    text-transform: capitalize;
+}
+
+.cartListItem p {
+    font-size: .75em;
+}
+
+
+.priceCart::before {
+    content: "P$ ";
+}
+
+
+.cardCart {
+    width: 20%;
+    height: fit-content;
+    margin: 1.5em;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.buttonsCardCart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttonsCardCart:last-child {
+    font-size: .3em;
+    margin: 1.5em;
 }
