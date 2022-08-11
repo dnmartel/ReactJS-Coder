@@ -62,24 +62,24 @@ const ItemCount = ({ stock, initial, onRemove, onAdd, setCounter, counter }) => 
         <div className='ItemCount-section'>
             <div className='ItemCount'>
 
-                <Button size="small" variant="outlined" onClick={restaProd}> -1</Button>
+                <Button size="small" variant="contained" onClick={restaProd}> -1</Button>
 
                 <h5>{realStock >= 1 ? counter : "0"}</h5>
 
-                <Button size="small" variant="outlined" onClick={sumarProd}> +1</Button>
+                <Button size="small" variant="contained" onClick={sumarProd}> +1</Button>
 
             </div>
             <span className='stock'>Stock: {muestraStock} </span>
 
 
 
-            <Button className="agregarButton" size="large" variant="outlined" onClick={addToCart}><AddShoppingCartIcon size="large" />Agregar</Button>
+            <Button className="agregarButton" size="large" variant="contained" onClick={addToCart}><AddShoppingCartIcon size="large" />Agregar</Button>
             <Button size="small" onClick={resProd}><RemoveShoppingCartIcon size="small" />Remover</Button>
 
 
             {(stock !== realStock) && (
                 <Link to="/cart">
-                    <Button style={{ width: "100%", marginTop: "2em" }} variant="outlined">
+                    <Button style={{ width: "100%", marginTop: "2em" }} variant="contained">
                         Ir al carrito
                     </Button>
                 </Link>)}

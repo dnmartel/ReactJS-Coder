@@ -1,6 +1,24 @@
-.formCompra{
+.formCompra {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+
+}
+
+.formCompra input {
+    /* width: 100%; */
+    margin: .5em 0;
+}
+
+.formCompra input:last-child {
+    margin-bottom: 2em;
+}
+
+.formEmailError {
+    font-size: .5em;
+    color: red;
+    margin: 0;
+    text-align: left;
+    align-self: flex-start;
 }

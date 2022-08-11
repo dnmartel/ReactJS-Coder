@@ -37,7 +37,7 @@ const Item = ({ title, image, type, altType, price, id, pid }) => {
                 </div>
 
                 <Link className="cardItemLink" to={`/item/${id}`}>
-                    <Button className="cardItemButton" size="small" variant="outlined"> Ver más </Button>
+                    <Button className="cardItemButton" size="small" variant="contained"> Ver más </Button>
                 </Link>
             </div >
         </>

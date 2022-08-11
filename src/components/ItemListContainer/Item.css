@@ -96,6 +96,11 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    transition: .25s all ease;
+}
+
+.cardItem:hover {
+    transform: scale(1.01);
 }
 
 .cardInterior {

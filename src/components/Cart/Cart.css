@@ -4,7 +4,9 @@ body {
 
 .cartTitle {
     color: black;
-    font-size: 2em;
+    font-weight: 900;
+    font-size: 1.5em;
+    text-transform: uppercase;
 }
 
 .carritoVacio {
@@ -14,6 +16,7 @@ body {
 .sectionCart {
     display: flex;
     justify-content: center;
+    flex-flow: row wrap;
     margin: 0;
     width: 95%;
     height: 100vh;
@@ -22,6 +25,7 @@ body {
 }
 
 .cartList {
+    min-width: 600px;
     width: 70%;
     overflow-y: auto;
 }
@@ -32,39 +36,32 @@ body {
 
 .cartListItem {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
+    text-transform: uppercase;
+    color: black;
 }
 
 .cartListItem:first-child {
     margin-top: 1.5em;
 }
 
-.cartListItem {
-    color: black;
-}
-
 .cartListItem p.titleCartListItem {
-    width: 3em;
+    /* width: 3em; */
     font-weight: 600;
     font-size: .75em;
     text-transform: capitalize;
 }
 
 .cartListItem p {
-    font-size: .75em;
-}
-
-
-.priceCart::before {
-    content: "P$ ";
+    font-size: .6em;
 }
 
 
 .cardCart {
     width: 20%;
-    height: fit-content;
+    height: 50%;
     margin: 1.5em;
     background: rgba(255, 255, 255, 1);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -72,15 +69,37 @@ body {
     -webkit-backdrop-filter: blur(0px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
 }
 
+.datosCardCart h4 {
+    border-radius: 10px 10px 0 0;
+    background-color: aliceblue;
+    padding: 2em;
+    margin-top: 0;
+    font-size: .75em;
+    font-weight: 400;
+    font-style: bold;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.datosCardCart p {
+    font-size: .6em;
+    margin: 2em;
+    text-align: left;
+}
 .buttonsCardCart {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-self: center;
+    width: 75%;
+    margin-bottom: .5em;
 }
 
-.buttonsCardCart:last-child {
-    font-size: .3em;
-    margin: 1.5em;
+.buttonsCardCart button{
+    width: 100%;
 }

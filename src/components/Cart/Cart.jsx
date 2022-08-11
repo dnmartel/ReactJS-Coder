@@ -20,7 +20,7 @@ const Cart = () => {
                     <div className="carritoVacio">
                         <h1>Carrito Vacio</h1>
                         <Link to="/">
-                            <Button variant="outlined" style={{ margin: "2em 0", alignSelf: "center" }} >Volver a comprar</Button>
+                            <Button variant="contained" style={{ margin: "2em 0", alignSelf: "center" }} >Volver a comprar</Button>
                         </Link>
                     </div>
                 </div>
@@ -44,8 +44,8 @@ const Cart = () => {
                                     <img src={e.image} alt={e.title} width="100px" />
                                     <p className="titleCartListItem">{e.title}</p>
                                     <p>Unidades: {e.cantidad}</p>
-                                    <p className="priceCart"> {e.cantidad * e.price}</p>
-                                    <Button variant="outlined" onClick={() => { removeItem(e.id) }}><DeleteOutlineIcon fontSize="small" /></Button>
+                                    <p className="priceCart"> P$ {e.cantidad * e.price}</p>
+                                    <Button variant="contained" onClick={() => { removeItem(e.id) }}><DeleteOutlineIcon fontSize="small" /></Button>
 
                                 </div>
                             )
@@ -53,15 +53,16 @@ const Cart = () => {
                     </div>
 
                     <div className="cardCart">
+                        <div className="datosCardCart">
+                            <h4>Sumario</h4>
+                            <p> Cant. de Pokemones: {cart.reduce((acc, curr) => acc + curr.cantidad, 0)}</p>
+                            <p className="priceCart">Total: P$ {cartTotal()}</p>
 
-                        <p> Pokemones: {cart.reduce((acc, curr) => acc + curr.cantidad, 0)}</p>
 
-                        <h2 className="priceCart"> {cartTotal()}</h2>
-
-
+                        </div>
                         <div className="buttonsCardCart">
                             <Link to="/checkout">
-                                <Button variant="outlined"> Pagar </Button>
+                                <Button variant="contained"> Pagar </Button>
                             </Link>
                             <Link to="/">
                                 <Button>Seguir comprando</Button>
