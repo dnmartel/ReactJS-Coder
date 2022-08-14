@@ -28,6 +28,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/login" element={<SignIn />}/>
           <Route path="/signup" element={<SignUp />}/>
+          <Route path="/ReactJS-Coder" element={<Home />}/>
           <Route path="/*" element={
             <main style={{ display: "flex", justifyContent: 'center', padding: "2rem" }}>
             <p>404</p>
