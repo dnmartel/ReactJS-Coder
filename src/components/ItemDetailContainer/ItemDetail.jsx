@@ -8,7 +8,7 @@ import "./ItemDetail.css";
 
 const ItemDetail = ({ detail }) => {
 
-    const { title, price, altImage, description, stock, id, ability, altAbility, type, altType, height, weight } = detail;
+    const { title, price, image, altImage, description, stock, id, ability, altAbility, type, altType, height, weight } = detail;
 
     const { addItem, removeItem } = useContext(CartContext)
 
@@ -56,7 +56,7 @@ const ItemDetail = ({ detail }) => {
             <div className="itemDetail-container">
                 <section>
                     <h1 className="titleBGDetail"> {title} </h1>
-                    <img src={altImage} alt={title} />
+                    <img src={altImage ? altImage : image} alt={title} />
                 </section>
                 <aside className="cardAside">
                     <div className={`titleDetailContainer type-${type}`} >

@@ -9,10 +9,14 @@
 
 .fondoId, .fondoId h2 {
     background-color: black;
-    border-radius: 5px;
+    border-radius: 10px;
     color: white;
     height: fit-content;
     margin: 0;
-    padding: 0.2    em;
+    padding: 0.2em;
+}
+
+.successDiv button {
+    margin-top: 1em;
 }
 

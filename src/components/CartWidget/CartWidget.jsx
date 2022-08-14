@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
-import Badge from '@mui/material/Badge';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { CartContext } from "../../context/CartContext";
+import Badge from '@mui/material/Badge';
 import { useContext } from "react";
+import { Link } from 'react-router-dom';
+import { CartContext } from "../../context/CartContext";
 
 const CartWidget = () => {
 

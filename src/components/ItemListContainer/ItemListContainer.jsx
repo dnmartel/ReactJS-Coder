@@ -21,7 +21,7 @@ const ItemListContainer = () => {
         const traerProductos = async () => {
             const db = getFirestore();
             if (categoria !== undefined) {
-                const q = await query(collection(db, "PokeBaseTest"), where("categoryId", "==", categoria))
+                const q = await query(collection(db, "PokeBase"), where("categoryId", "==", categoria))
                 await getDocs(q).then((snapshot) => {
                     const dataExtraida = snapshot.docs.map((datos) => datos.data());
                     const idExtraido = snapshot.docs.map((datos) => datos.id);
@@ -32,7 +32,7 @@ const ItemListContainer = () => {
                     setItems(consultaUnificada)
                 })
             } else {
-                await getDocs(collection(db, "PokeBaseTest")).then((snapshot) => {
+                await getDocs(collection(db, "PokeBase")).then((snapshot) => {
                     const dataExtraida = snapshot.docs.map((datos) => datos.data());
                     const idExtraido = snapshot.docs.map((datos) => datos.id);
                     let consultaUnificada = [];

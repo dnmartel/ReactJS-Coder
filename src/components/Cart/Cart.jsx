@@ -46,7 +46,6 @@ const Cart = () => {
                                     <p>Unidades: {e.cantidad}</p>
                                     <p className="priceCart"> P$ {e.cantidad * e.price}</p>
                                     <Button variant="contained" onClick={() => { removeItem(e.id) }}><DeleteOutlineIcon fontSize="small" /></Button>
-
                                 </div>
                             )
                         })}
@@ -57,8 +56,6 @@ const Cart = () => {
                             <h4>Sumario</h4>
                             <p> Cant. de Pokemones: {cart.reduce((acc, curr) => acc + curr.cantidad, 0)}</p>
                             <p className="priceCart">Total: P$ {cartTotal()}</p>
-
-
                         </div>
                         <div className="buttonsCardCart">
                             <Link to="/checkout">

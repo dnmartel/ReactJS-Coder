@@ -4,7 +4,7 @@ export default function subirHaciaFirestore() {
 
     const traerProductos = async () => {
         const initialResponse = fetch(
-            'https://pokeapi.co/api/v2/pokemon?limit=100&offset=100'
+            'https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0'
         )
             .then((res) => res.json())
             .then((data) => {
@@ -40,7 +40,7 @@ export default function subirHaciaFirestore() {
                                 }
 
                                 const db = getFirestore();
-                                const ordersCollection = collection(db, "PokeBaseTest");
+                                const ordersCollection = collection(db, "PokeBase");
                                 addDoc(ordersCollection, order).then(({ id }) => console.log(id + ` Success`))
 
                             } else if ((detallePokemon.types[1] !== undefined) && (detallePokemon.abilities[1].ability === undefined)) {
@@ -62,7 +62,7 @@ export default function subirHaciaFirestore() {
                                 }
 
                                 const db = getFirestore();
-                                const ordersCollection = collection(db, "PokeBaseTest");
+                                const ordersCollection = collection(db, "PokeBase");
                                 addDoc(ordersCollection, order).then(({ id }) => console.log(id + ` Success`))
 
 
@@ -85,7 +85,7 @@ export default function subirHaciaFirestore() {
                                 }
 
                                 const db = getFirestore();
-                                const ordersCollection = collection(db, "PokeBaseTest");
+                                const ordersCollection = collection(db, "PokeBase");
                                 addDoc(ordersCollection, order).then(({ id }) => console.log(id + ` Success`))
                             }
 
@@ -107,7 +107,7 @@ export default function subirHaciaFirestore() {
                                 }
 
                                 const db = getFirestore();
-                                const ordersCollection = collection(db, "PokeBaseTest");
+                                const ordersCollection = collection(db, "PokeBase");
                                 addDoc(ordersCollection, order).then(({ id }) => console.log(id + ` Success`))
                             }
                         })
