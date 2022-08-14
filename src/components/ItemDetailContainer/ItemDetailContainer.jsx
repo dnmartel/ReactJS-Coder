@@ -1,34 +1,49 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import productos from "../mock/productos";
 import ItemDetail from "./ItemDetail";
+import Loading from "../Loading/Loading";
+import { collection, getDocs, getFirestore, limit } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
     const [detail, setDetail] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const { id } = useParams();
 
     useEffect(() => {
-        const getItem = () => {
-            return new Promise((res, rej) => {
-                setLoading(true);
-                setTimeout(() => {
-                    res(productos.find(obj => obj.id === id));
-                }, 500)
+        setLoading(true);
+
+        const getItem = async () => {
+            const db = getFirestore();
+            await getDocs(collection(db, "PokeBase"), limit(1)).then((snapshot) => {
+                const dataExtraida = snapshot.docs.map((datos) => datos.data());
+                const idExtraido = snapshot.docs.map((datos) => datos.id);
+                let consultaUnificada = [];
+                dataExtraida.forEach(e => (
+                    (id === idExtraido[dataExtraida.indexOf(e)]) &&
+                    (consultaUnificada = { ...e, id: idExtraido[dataExtraida.indexOf(e)] })
+                ))
+
+                setDetail(consultaUnificada)
             })
+
+        }
+
+        getItem();
+        setTimeout(() => {
+            setLoading(false)
+        }, 2000);
+
+        return () => {
+            document.body.style.backgroundImage = ``;
         };
 
-        getItem().then((data) => {
-            setLoading(false);
-            setDetail(data);
-        })
     }, [id]);
 
     return (
         <>
-            {loading ? <div className="App"><div className="loading"><h2>Cargando...</h2></div></div> : <ItemDetail detail={detail} />}
+            {loading ? <Loading /> : <ItemDetail detail={detail} />}
         </>
     )
 }

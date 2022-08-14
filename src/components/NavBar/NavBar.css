@@ -7,6 +7,12 @@ a {
     color: #ffffffce;
 }
 
+nav.NavBar {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
 nav {
     background-color: #161616;
     display: flex;
@@ -20,9 +26,9 @@ nav img {
     margin-left: 2em;
 }
 
-
 nav ul {
     display: flex;
+    align-items: center;
     padding: 0;
 }
 
@@ -32,4 +38,47 @@ nav ul * {
 
 nav div.cartWidget {
     margin-right: 2em;
+}
+
+.NavBar ul li {
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.NavBar ul li p {
+    color: #ffffffce;
+}
+
+.NavBar ul li:hover > a {
+    color: #b3a849;
+}
+
+.NavBar ul ul {
+    display: none;
+    position: absolute;
+    left: -3.5em;
+    background: #161616;
+    padding: .2em 0;
+    border-radius: 10px;
+}
+
+.NavBar ul ul a {
+    text-align: center;
+    line-height: 120%;
+    padding: 10px 15px;
+}
+
+.NavBar ul li:hover>ul {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    z-index: 2;
+}
+
+.NavBar ul li:hover>ul li {
+    margin: .5em 0;
 }

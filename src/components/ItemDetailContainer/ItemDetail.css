@@ -1,10 +1,13 @@
+body {
+    height: 100%;
+}
+
 div.itemDetail-container {
-    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
-    width: 100%;
+    width: 95%;
     height: 100vh;
     color: #161616;
 }
@@ -15,32 +18,124 @@ div.itemDetail-container section {
     justify-content: center;
     align-items: center;
     width: 50%;
+    margin-right: 10%;
 }
 
 div.itemDetail-container section img {
-    width: calc(50vw - 30%);
+    width: calc(50vw - 40%);
+    overflow: hidden;
 }
 
-div.itemDetail-container aside {
+.cardAside {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
-    padding: 4em;
+    align-items: center;
+    width: 10%;
+    min-width: 150px;
+    padding: 1.5em;
+
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-div.itemDetail-container aside h2 {
+.bgImgDetail {
+    display: flex;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.titleDetailContainer {
+    width: fit-content;
     margin: 0 0 1em 0;
-    font-size: 2.5em;
+    border-radius: 10px;
+    padding: .1em;
 }
 
-div.itemDetail-container aside p {
-    font-size: 1em; 
-    font-family: monospace;
+.titleBGDetail {
+    display: flex;
+    margin-bottom: -1em;
+    font-size: 6em;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: .1em;
+    color: #ffffff;
+}
+
+.titleDetail {
+    margin: 0;
+    text-transform: capitalize;
+    letter-spacing: .1em;
+    color: #ffffff;
+}
+
+.descriptionDetail {
+    font-size: .75em;
+    font-style: italic;
+}
+
+.hrDetail {
+    width: 100%;
+}
+
+.abilityDetail {
+    font-size: .5em;
+    margin: .2em 0;
+}
+
+.heightDetail,
+.weightDetail {
+    font-size: .75em;
+    margin: .5em 0 0 0;
+}
+
+.hwDetailContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.heightDetailSubContainer,
+.weightDetailSubContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 .5em;
+}
+
+.hwDetail {
+    display: inline-block;
+    font-weight: 300;
+    font-size: .5em;
+    margin: 0 .2em;
+}
+
+.priceDetailContainer {
+    margin: .75em 0;
+}
+
+.priceDetail,
+.unitPriceDetail {
+    font-weight: 400;
+    margin: 0;
+}
+
+.priceDetail::before,
+.unitPriceDetail::before {
+    content: "P$ ";
+}
+
+.unitPriceDetail {
+    font-size: .5em;
 }
 
 div.itemDetail-container aside a {
-    
+
     color: #1976d2;
 }
 

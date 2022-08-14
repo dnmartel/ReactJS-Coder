@@ -9,22 +9,18 @@ div.ItemCount-section {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 2em;
-    margin-bottom: 1em;
+    margin-top: .75em;
 }
-
 
 div.ItemCount h5 {
-    margin: 0 1em
+    margin: 0 1em;
 }
 
-div.ItemCount-section span {
-    font-size: 1em;
-    align-self: center;
+.stock {
+    text-transform: uppercase;
+    font-size: .45em;
+    font-weight: 400;
     color: #161616;
-} 
-div.ItemCount-section span strong {
-    display: inline-block;
-    margin: 1em 0;
-    font-size: 1.2em;
+    margin: 1em 0 3em 0;
 }
+
