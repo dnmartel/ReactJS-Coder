@@ -16,6 +16,10 @@
 
 
 
-[PokeStore App](https://dnmartel.github.io/ReactJS-Coder/) <p>es una pequeña webapp basada en React que sirvió como puntapié inicial para explorar la librería. Se aplicaron las bases de React como los Hooks useState, useEffect y useContext; validación de formularios, interacción con APIs, Firebase y CRUD. Se utilizó PokeAPI para la extracción de datos iniciales y posterior subida mediante scripting a Firebase. </p>
+<p>Pokestore es una pequeña app web construida sobre React, la cual se usó como herramienta para explorar esta librería y sus posibilidades. Se aplicaron los Hooks básicos de React como useState, useEffect y useContext; validación de formularios, interacción con APIs, Firebase y operaciones CRUD.
 
-<p>My project is called Pokestore - it's a small webapp based on React which served as a starting point to explore the React library. I applied the basics of React such as the useState, useEffect and useContext Hooks; form validation, interaction with APIs, Firebase and CRUD. I used PokeAPI to extract initial data and then upload it to Firebase via scripting.</p>
+Para los datos iniciales de población de la tienda, se usó PokeAPI como fuente, y un script propio para posteriormente subirlos a Firebase. De esta forma, se pudo realizar una pequeña prueba de cómo estos conceptos se podrían aplicar a un proyecto más complejo.</p>
+
+<p>Pokestore is a small web app built on top of React, which was used as a tool to explore this library and its possibilities. Basic React Hooks such as useState, useEffect and useContext were applied; form validation, interaction with APIs, Firebase and CRUD operations.
+
+For the initial population data of the store, PokeAPI was used as a source, and an own script to later upload it to Firebase. In this way, it was possible to carry out a small test of how these concepts could be applied to a more complex project.</p>
