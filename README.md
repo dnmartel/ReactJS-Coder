@@ -27,5 +27,4 @@ Para los datos iniciales de población de la tienda, se usó PokeAPI como fuente
 For the initial population data of the store, PokeAPI was used as a source, and an own script to later upload it to Firebase. In this way, it was possible to carry out a small test of how these concepts could be applied to a more complex project.</p>
 
 
-
-![](https://res.cloudinary.com/dth4axit0/image/upload/v1660747325/Untitled__Aug_17_2022_11_33_AM_1_itzj9t.gif)
+![GIF](./public/GIF.gif)
