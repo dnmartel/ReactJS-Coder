@@ -25,3 +25,7 @@ Para los datos iniciales de población de la tienda, se usó PokeAPI como fuente
 <p>Pokestore is a small web app built on top of React, which was used as a tool to explore this library and its possibilities. Basic React Hooks such as useState, useEffect and useContext were applied; form validation, interaction with APIs, Firebase and CRUD operations.
 
 For the initial population data of the store, PokeAPI was used as a source, and an own script to later upload it to Firebase. In this way, it was possible to carry out a small test of how these concepts could be applied to a more complex project.</p>
+
+
+
+![](https://res.cloudinary.com/dth4axit0/image/upload/v1660747325/Untitled__Aug_17_2022_11_33_AM_1_itzj9t.gif)
